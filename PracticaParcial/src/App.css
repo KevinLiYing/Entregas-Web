@@ -1,0 +1,217 @@
+/* ------- LAYOUT GENERAL ------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.app-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ------- COLUMNA IZQUIERDA (BUSCADOR Y RESULTADOS) ------- */
+.left-column {
+  flex: 2;
+}
+
+/* Buscador */
+.searchbar-wrapper {
+  margin-bottom: 20px;
+}
+
+.searchbar-wrapper input {
+  width: 70%;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  margin-right: 5px;
+}
+
+.searchbar-wrapper button {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  background-color: #ff5555;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Lista de sugerencias */
+.suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+  background-color: #1e1e1e;
+  border-radius: 4px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.suggestion-item img {
+  width: 50px;
+  height: 70px;
+  object-fit: cover;
+}
+
+/* ------- LISTA DE SERIES ------- */
+.series-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.serie-card {
+  width: 150px;
+  background-color: #1e1e1e;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.serie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.serie-card h3 {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.serie-card button {
+  padding: 5px;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 3px;
+  background-color: #ff5555;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Tarjeta seleccionada más pequeña (opcional) */
+.serie-card.selected {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+/* ------- COLUMNA DERECHA (FAVORITOS) ------- */
+.right-column {
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.right-column h2 {
+  margin-bottom: 10px;
+}
+
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.favorite-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #2a2a2a;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.favorite-card img {
+  width: 50px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.favorite-card h3 {
+  font-size: 0.9rem;
+  margin: 0;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.favorite-card button {
+  padding: 3px 6px;
+  font-size: 0.8rem;
+  background-color: #ff5555;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* ------- MODAL DE DETALLES ------- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px; /* no ocupa toda la pantalla */
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content p {
+  text-align: justify;
+}
+
+.modal-content button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ff5555;
+  color: #fff;
+  cursor: pointer;
+}
